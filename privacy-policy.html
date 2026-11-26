@@ -96,11 +96,12 @@
 
 <header>
   <h1>MERC DROP — Privacy Policy</h1>
-  <p class="sub">Last updated: 21 November 2026</p>
+  <p class="sub">Last updated: 26 November 2026</p>
   <ul class="apps">
     <li>MERC DROP EARLY ACCESS — <code>merc.drop</code> (Google Play)</li>
     <li>MERC DROP — <code>com.mercdrop.game</code></li>
     <li>MERC DROP DEMO — <code>com.mercdrop.demo</code></li>
+    <li>MERC DROP EARLY ACCESS on the <strong>Epic Games Store</strong> (Windows PC)</li>
     <li>and the same game on Windows PC</li>
   </ul>
 </header>
@@ -111,7 +112,8 @@
   It sends a small amount of data to run its online features: the <strong>leaderboards</strong>
   (the player name you choose and your scores), anonymous <strong>play stats</strong> that help us
   balance the game (you can turn these off), any <strong>feedback</strong> you choose to write to us,
-  <strong>Google Play</strong> services on Android, and &mdash; only when you choose ONLINE &mdash;
+  <strong>Google Play</strong> services on Android, <strong>Epic Games</strong> services in the Epic Games Store
+  version on PC, and &mdash; only when you choose ONLINE &mdash;
   <strong>Epic Online Services</strong>, which connects you to a friend over the internet.</p>
   <p>We never ask for your real name, email address, phone number, contacts, photos or GPS location.</p>
 </div>
@@ -190,10 +192,31 @@ Nothing is sent unless you write it and press SEND.</p>
       it can offer you the update.</li>
 </ul>
 
-<h3>2.5 Technical data every connection carries</h3>
+<h3>2.5 Epic Games Store version (Windows PC)</h3>
+<p>The copy of the game you get from the Epic Games Store is started by the Epic Games Launcher. When it
+starts, the launcher hands the game a one-time code, and the game uses it to sign in to Epic Online Services
+with your <strong>Epic Games account</strong>. Through this sign-in the game receives your
+<strong>Epic account ID</strong> and your <strong>Epic display name</strong> (Epic's "basic profile"
+permission) &mdash; nothing else from your account. The game uses them to:</p>
+<ul>
+  <li><strong>check that your account owns the game</strong>: the first time each version of the game starts,
+      it asks Epic for a signed proof that your account owns it (the proof carries your Epic account ID) and
+      sends that proof to our <strong>key server</strong>, which runs on Cloudflare. The key server checks
+      Epic's signature and sends back the key that unlocks the game's files. It keeps no copy of the proof or
+      of your account ID. After that the game remembers the check on your PC and also plays offline;</li>
+  <li><strong>unlock Epic Games Store achievements</strong>: when you earn an achievement, the game adds to a
+      matching counter ("stat") on Epic's servers, which unlocks it on your Epic profile;</li>
+  <li>connect you to a friend when you choose ONLINE co-op (see section 5).</li>
+</ul>
+<p>Epic Games handles this data under the
+<a href="https://www.epicgames.com/site/privacypolicy" rel="noopener" target="_blank">Epic Games Privacy Policy</a>.
+We do not receive your Epic account email address, password, payment details or friends list.</p>
+
+<h3>2.6 Technical data every connection carries</h3>
 <p>Like any internet connection, the game's requests reach Google's servers (Firebase) from your
 IP address. Google uses it to deliver the data and to protect the service from abuse. When you
-play ONLINE (section 5), Epic Games' servers see your IP address the same way. We do not
+play ONLINE (section 5), Epic Games' servers see your IP address the same way, and so does the key
+server's host, Cloudflare, when the Epic Games Store version checks your purchase. We do not
 store IP addresses with your records and do not use them to find your location.</p>
 <p>On the title screen the game also downloads short news posts that we publish and the current
 leaderboard tops. These downloads send nothing about you beyond the connection itself.</p>
@@ -219,8 +242,12 @@ leaderboard tops. These downloads send nothing about you beyond the connection i
   <li><strong>Formspree</strong> delivers feedback messages to our inbox by email.
       <a href="https://formspree.io/legal/privacy-policy/" rel="noopener" target="_blank">Formspree Privacy Policy</a>.</li>
   <li><strong>Epic Games</strong>: Epic Online Services (anonymous device sign-in, rooms and the
-      peer-to-peer connection) runs ONLINE play, only when you use it.
+      peer-to-peer connection) runs ONLINE play, only when you use it; in the Epic Games Store version it
+      also signs you in with your Epic account, confirms your purchase and unlocks achievements (section 2.5).
       <a href="https://www.epicgames.com/site/privacypolicy" rel="noopener" target="_blank">Epic Games Privacy Policy</a>.</li>
+  <li><strong>Cloudflare</strong> runs our key server (Epic Games Store version only): it checks Epic's proof
+      that your account owns the game and sends back the key that unlocks the game's files, keeping no copy.
+      <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener" target="_blank">Cloudflare Privacy Policy</a>.</li>
 </ul>
 <p>These providers process the data on our behalf. We do not pass it to anyone else.</p>
 
@@ -251,8 +278,11 @@ Games Privacy Policy</a>. Only play ONLINE with people you know and trust.</p>
 <p>The game keeps your settings, control bindings, touch layout, profiles (player names, gold,
 outfits and skins, achievements), campaign progress and a local diagnostic log in its own
 private storage. The anonymous account IDs from section 2 and any play stats or feedback not yet
-sent wait there too. The diagnostic log is not uploaded. Uninstalling the game, or Android
-Settings → Apps → the game → Storage → "Clear data", deletes all of it.</p>
+sent wait there too. On PC, the Epic Games Store version also keeps a note that your purchase was
+checked and the key that unlocks its files, sealed with Windows' own data protection for your Windows
+user account. The diagnostic log is not uploaded. Uninstalling the game, or Android
+Settings → Apps → the game → Storage → "Clear data", deletes all of it. On PC, uninstalling
+leaves the game's folder in place: delete <code>%APPDATA%\mercdrop_demo</code> to remove it all.</p>
 
 <h3>Android backup</h3>
 <p>If Android's built-in backup is on, Android may copy the game's save folder into your Google
@@ -343,8 +373,8 @@ If you believe a child has sent us personal information, contact us and we will 
   </tbody>
 </table>
 </div>
-<p>No data is shared with third parties or used for advertising: Google, Epic Games and Formspree
-process it on our behalf. All of it is encrypted in transit.</p>
+<p>No data is shared with third parties or used for advertising: Google, Epic Games, Cloudflare and
+Formspree process it on our behalf. All of it is encrypted in transit.</p>
 
 <h2>12. Changes to this policy</h2>
 <p>If the game starts handling data differently, this page will be updated before that version
